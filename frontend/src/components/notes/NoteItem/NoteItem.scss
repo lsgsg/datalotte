@@ -1,0 +1,44 @@
+
+.listChart {
+    div { float:left}
+    .listChart1{
+        width: 50%;
+        height:500px;
+    }
+    .listChart2 {
+        width: 40%;
+        height:500px;
+    }
+    .listChart3{
+        width: 40%;
+        height:500px;
+        .innerPie { margin:0 auto;}
+    }
+    .listChart4 {
+        width: 50%;
+        height:500px;
+    }
+}
+.linechart_1 {width:1000px; height : 300px;}
+.doughnut {width:300px; height: 300px}
+.barData {width: 1000px; height:300px;}
+.hData {
+    width: 70vw;
+    height:30vh;
+}
+
+.chart-item {
+  font-family: 'Nanum Gothic Coding', monospace;
+  display: flex;
+  text-align : center;
+  height: 3rem;
+  cursor: pointer;
+
+  .chart {
+    color:#333;
+    width:25%;
+    font-weight: normal;
+    font-size: 1.25rem;
+  }
+
+}

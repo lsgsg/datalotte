@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {text-align:center;} 
+	form {width : 500px; margin:0 auto; text-align:left;}
+	form select {width: 200px; height:30px; text-align:right;}
+	input[type="text"]{ width:200px; height:30px;text-align:right;}
+</style>
+</head>
+<body>
+<h2>** 고객 데이터를 이용한 분류분석 **</h2>
+<form action="/api/predict/" method="post"> {% csrf_token %}
+성별 :
+<select name="gen">
+	<option value="0">여</option>
+	<option value="1">남</option>
+</select>
+<p>
+나이대 :
+<select name="age">
+	<option value="10">10대</option>
+	<option value="20">20대</option>
+	<option value="30">30대</option>
+	<option value="40">40대</option>
+	<option value="50">50대</option>
+	<option value="60">60대</option>
+	<option value="70">70대</option>
+</select>
+<p>
+지역:
+<select name="area">
+	<option value="0">서울</option>
+	<option value="1">경기</option>
+	<option value="2">전남</option>
+	<option value="3">경북</option>
+	<option value="4">전북</option>
+	<option value="5">광주</option>
+	<option value="6">부산</option>
+	<option value="7">경남</option>
+	<option value="8">대구</option>
+	<option value="9">인천</option>
+	<option value="10">대전</option>
+	<option value="11">울산</option>
+	<option value="12">충남</option>
+	<option value="13">제주</option>
+	<option value="14">강원</option>
+	<option value="15">충북</option>
+</select>
+<p>
+날짜: (1년 중 몇 번째 일인지로 입력)
+<input type="text" name="date" required>
+<p>
+요일:
+<select name="day">
+	<option value="0">월</option>
+	<option value="1">화</option>
+	<option value="2">수</option>
+	<option value="3">목</option>
+	<option value="4">금</option>
+	<option value="5">토</option>
+	<option value="6">일</option>
+</select>
+<p>
+<input type="submit" value="예측">
+</form>
+
+{% if result %}
+	<div>
+		예상 소분류 : {{result}}
+	</div>
+{% endif %}
+
+</body>
+</html>
